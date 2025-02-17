@@ -1,6 +1,6 @@
-#📢 **COMMON SOURCE (CS) AMPLIFIER PROJECT**
+📢 #**COMMON SOURCE (CS) AMPLIFIER PROJECT**
 
-##📌 **Overview**
+📌 ##**Overview**
 This project demonstrates the design, simulation, and analysis of a Common Source (CS) Amplifier. The CS 
 amplifier is widely used in signal amplification due to its high voltage gain and moderate input impedance. 
 LTSpice tools is used for the design and simulation. The library "tsmc018.lib" is used to set the parameter 
@@ -8,7 +8,7 @@ of the nMOS.
 
 Power = 50 μW, Volage supply = 1.8V and Drain Resistance (RD) = 1kΩ is considered.
 
-##🎯 **Objectives**
+🎯 ##**Objectives**
 ✔️ Perform DC Analysis to determine the DC operating point of the circuit.
 ✔️ Conduct Transient Analysis to observe the time-domain response of the amplifier.
 ✔️ Execute AC Analysis to evaluate the frequency response and gain characteristics.
@@ -18,7 +18,7 @@ Power = 50 μW, Volage supply = 1.8V and Drain Resistance (RD) = 1kΩ is conside
     Bandwidth (frequency range where the amplifier operates effectively)
     Power Consumption (efficiency and performance assessment)
 
-##⚡ **Circuit Description**
+⚡ ##**Circuit Description**
 ![Alt Text](circuit.png)
 The components we require are
     1. N-channel Enhancement MOSFET (CMOSN)
@@ -28,14 +28,14 @@ The components we require are
 
 The MOSFET we use has a width (W) = 1.12 µm, length (L) = 180 nm.
 
-##🛠️ **Procedure**
+🛠️ ##**Procedure**
 1. Set up the circuit and measure the DC Q-point as per given parameter.
 2. Open LTSpice, select the nmos4 transistor ![Alt Text](nmos.png), and make the connection as per circuit 
 diagram given above.
 3. Open the SPICE Directive and add tsmc018.lib by writing ".lib tsmc018.lib".
 4. Perform DC, AC, transient, and DC operating point analyses for further evaluation.
 
-##🚀 **Analysis**
+🚀 ##**Analysis**
 **1. DC Operating Point**
    Given Power = 50 μW, Volage supply (VDD) = 1.8V and Drain Resistance (RD) = 1kΩ
    P = VDD x ID
@@ -133,34 +133,30 @@ diagram given above.
       For this right-click on the MOSFET M1, and change the value of the length from 180 nm to {l}. This changes the value of the length to a parameter, which can be varied between values. Then, using the SPICE directive, type “.step param l 50n 200n 25n”, which tells LTSpice to vary L from 50 nm to 200 nm, in steps of 25 nm.
 
 
-##📊 **Results** 
+📊 ##**Results** 
    Drain Current (ID): ⚡ 27.7668 µA
    Drain-to-Source Voltage (VDS): 🔋 1.7723 V
    Gain (V/V): 📈 -35.54 V/V
    Gain (dB): 🎚️ -15.507 dB
 
-##🧐 **Inference for CS Amplifier Project**
+🧐 ##**Inference for CS Amplifier Project**
    The Common Source (CS) Amplifier was successfully designed, simulated, and analyzed using LTSpice with 
    the tsmc018.lib library for nMOS parameters. The key observations and conclusions from the analysis are:
-
-    DC Operating Point Analysis:
-        The calculated drain current (ID) ≈ 27.778 µA and drain voltage (VD) ≈ 1.7722 V match closely with the simulation results, confirming the accuracy of the biasing conditions.
+   DC Operating Point Analysis:
+        The calculated drain current (ID) ≈ 27.778 µA and drain voltage (VD) ≈ 1.7722 V match closely with the simulation results, confirming the accuracy of the biasing 
+        conditions.
         The MOSFET operates in saturation mode, ensuring amplification characteristics.
-
-    Transient Analysis:
+   Transient Analysis:
         The output waveform exhibits a clear phase shift of 180°, confirming the inverting nature of the CS amplifier.
         The measured voltage gain (Av) = -35.54 V/V, indicating significant signal amplification.
-
-    AC Analysis:
+   AC Analysis:
         The amplifier shows a strong frequency response within the desired bandwidth.
         Gain remains consistent across the mid-band frequencies, ensuring effective signal amplification.
-
-    DC Sweep Analysis:
+   DC Sweep Analysis:
         Transfer characteristics verify that the threshold voltage (Vt) from the simulation (~0.36 V) closely matches the given 0.3662 V from the tsmc018.lib file.
         Drain characteristics confirm the transition from triode to saturation region around VDS = 0.4V - 0.6V.
         Voltage Transfer Characteristics validate the amplifier’s ability to function effectively within the given biasing conditions.
-
-    Parameter Variation Studies:
+   Parameter Variation Studies:
         Increasing RD results in a decrease in ID, confirming Ohm’s Law behavior.
         Increasing W enhances the drain current due to a larger conduction path.
         Increasing L reduces the drain current as expected, impacting the device’s transconductance.
