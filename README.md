@@ -1,6 +1,6 @@
-📢 #**COMMON SOURCE (CS) AMPLIFIER PROJECT**
+📢 # **COMMON SOURCE (CS) AMPLIFIER PROJECT**
 
-📌 ##**Overview**
+📌 ## **Overview**  
 This project demonstrates the design, simulation, and analysis of a Common Source (CS) Amplifier. The CS 
 amplifier is widely used in signal amplification due to its high voltage gain and moderate input impedance. 
 LTSpice tools is used for the design and simulation. The library "tsmc018.lib" is used to set the parameter 
@@ -8,41 +8,42 @@ of the nMOS.
 
 Power = 50 μW, Volage supply = 1.8V and Drain Resistance (RD) = 1kΩ is considered.
 
-🎯 ##**Objectives**
-✔️ Perform DC Analysis to determine the DC operating point of the circuit.
-✔️ Conduct Transient Analysis to observe the time-domain response of the amplifier.
-✔️ Execute AC Analysis to evaluate the frequency response and gain characteristics.
-✔️ Extract Key Parameters including:
-    DC Operating Point (biasing conditions of the MOSFET)
-    Gain (voltage amplification factor)
-    Bandwidth (frequency range where the amplifier operates effectively)
-    Power Consumption (efficiency and performance assessment)
+🎯 ## **Objectives**  
+✔️ Perform DC Analysis to determine the DC operating point of the circuit.  
+✔️ Conduct Transient Analysis to observe the time-domain response of the amplifier.  
+✔️ Execute AC Analysis to evaluate the frequency response and gain characteristics.  
+✔️ Extract Key Parameters including:  
+    DC Operating Point (biasing conditions of the MOSFET)  
+    Gain (voltage amplification factor)  
+    Bandwidth (frequency range where the amplifier operates effectively)  
+    Power Consumption (efficiency and performance assessment)  
 
-⚡ ##**Circuit Description**
+⚡ ##**Circuit Description**  
 ![Alt Text](circuit.png)
-The components we require are
-    1. N-channel Enhancement MOSFET (CMOSN)
-    2. DC Supply Voltage = 1.8V (VDD)
-    3. Resistor = 1kΩ
-    4. AC Power Supply = 0.9V DC, 50mV sinusoidal signal (VG)
+
+
+The components we require are  
+    1. N-channel Enhancement MOSFET (CMOSN)  
+    2. DC Supply Voltage = 1.8V (VDD)  
+    3. Resistor = 1kΩ  
+    4. AC Power Supply = 0.9V DC, 50mV sinusoidal signal (VG)  
 
 The MOSFET we use has a width (W) = 1.12 µm, length (L) = 180 nm.
 
-🛠️ ##**Procedure**
-1. Set up the circuit and measure the DC Q-point as per given parameter.
-2. Open LTSpice, select the nmos4 transistor ![Alt Text](nmos.png), and make the connection as per circuit 
-diagram given above.
-3. Open the SPICE Directive and add tsmc018.lib by writing ".lib tsmc018.lib".
-4. Perform DC, AC, transient, and DC operating point analyses for further evaluation.
+🛠️ ##**Procedure**  
+1. Set up the circuit and measure the DC Q-point as per given parameter.  
+2. Open LTSpice, select the nmos4 transistor ![Alt Text](nmos.png), and make the connection as per circuit diagram given above.  
+3. Open the SPICE Directive and add tsmc018.lib by writing ".lib tsmc018.lib".  
+4. Perform DC, AC, transient, and DC operating point analyses for further evaluation.  
 
-🚀 ##**Analysis**
-**1. DC Operating Point**
-   Given Power = 50 μW, Volage supply (VDD) = 1.8V and Drain Resistance (RD) = 1kΩ
-   P = VDD x ID
-   ID = 27.778 μA ----(1)
-   VD = VDD - ID.RD
-   VD = 1.7722 V ----(2)
-   Vt = 0.3662 V (From tsmc018.lib file)
+🚀 ##**Analysis**  
+**1. DC Operating Point**  
+   Given Power = 50 μW, Volage supply (VDD) = 1.8V and Drain Resistance (RD) = 1kΩ  
+   P = VDD x ID  
+   ID = 27.778 μA ----(1)  
+   VD = VDD - ID.RD  
+   VD = 1.7722 V ----(2)  
+   Vt = 0.3662 V (From tsmc018.lib file)  
    VGD = 0.9 - 1.7722 = -0.8722 V
    Since VGD < Vt, MOSFET is in the saturation mode.
    Therefore, Operating point = (1.7722 V, 27.778 𝜇A) when VGS = 0.9 V.
