@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/87d8ad09-8aee-4d14-b689-f79d884b30ac)# 📡 MOS Differential Amplifier Experiment
+# 📡 MOS Differential Amplifier Experiment
 ## 🎯 Aim
 Design and analyze MOS differential amplifier circuit for the following specifications:
 - Vdd = 3.2V
