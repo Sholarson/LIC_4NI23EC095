@@ -311,7 +311,7 @@ The gain in the second circuit (with Iss) is slightly lower than the first circu
 
 When using a resistor (Rss), the tail current varies due to the differential input signal, causing imbalance and reducing the differential mode gain.
 
-A current source (Iss) ideally provides a high output impedance, improving the common-mode rejection ratio (CMRR) and allowing for a more stable and higher gain.
+A current source (Iss) and NMOS ideally provides a high output impedance and are more stable.
 
 **3. Why Gain Reduces Instead:**
 
