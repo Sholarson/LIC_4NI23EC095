@@ -153,7 +153,7 @@ Here we can see Id = 0.4375mA , Vds = 1.70025-0.599027 = 1.1V (Vds = Vd-Vs), Vp 
 6. Run the simulation by selecting **"Transient"** mode and setting Stop time as 5ms (Since freq = 1kHz, time period = 1ms and this 5ms simulation time allows you to capture 5 full cycles of the sine wave.
 7. You will get:-
 
-   <place the transient here>
+![Alt Text](image/transient_iss.png)
 
 Here we can see that the amplitude of the output waveform is 1.7812989-1.6991184 = 0.0821805V. The input amplitude is 50mV so Gain, Av = -Vout/Vin = -0.0821805V/50mV = -1.64361.
 Therefore, **Gain,Av = -1.64361**.
@@ -167,7 +167,7 @@ Therefore, **Gain,Av = -1.64361**.
 4. Click "ok".
 5. Then you will get :-
 
-   <place the ac anlysis here>
+![Alt Text](image/ac_iss.png)
 
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -215,7 +215,7 @@ Here we can see Id = 0.437425mA , Vds = 1.70051-0.5991 = 1.1V (Vds = Vd-Vs), Id(
 6. Run the simulation by selecting **"Transient"** mode and setting Stop time as 5ms (Since freq = 1kHz, time period = 1ms and this 5ms simulation time allows you to capture 5 full cycles of the sine wave.
 7. You will get:-
 
-   <place the transient here>
+![Alt Text](image/transient_nmos.png)
 
 Here we can see that the amplitude of the output waveform is 1.7901093-1.6971968 = 0.0929125V. The input amplitude is 50mV so Gain, Av = -Vout/Vin = -0.0929125V/50mV = -1.85825.
 Therefore, **Gain,Av = -1.85825**.
@@ -229,4 +229,4 @@ Therefore, **Gain,Av = -1.85825**.
 4. Click "ok".
 5. Then you will get :-
 
-   <place the ac anlysis here>
+![Alt Text](image/ac_analysis_nmos.png)
