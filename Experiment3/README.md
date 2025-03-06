@@ -83,7 +83,7 @@ Here we can see Id = 0.437353mA , Vds = 1.7-0.59 = 1.1V (Vds = Vd-Vs), Vp = 0.59
 6. Run the simulation by selecting **"Transient"** mode and setting Stop time as 5ms (Since freq = 1kHz, time period = 1ms and this 5ms simulation time allows you to capture 5 full cycles of the sine wave.
 7. You will get:-
 
-   <place the transient here>
+![Alt Text](image/transient_rss.png)
 
 Here we can see that the amplitude of the output waveform is 1.818528-1.7036 = 0.114875V. The input amplitude is 50mV so Gain, Av = -Vout/Vin = -0.114875V/50mV = -2.2975.
 Therefore, **Gain,Av = -2.2975**.
@@ -97,7 +97,7 @@ Therefore, **Gain,Av = -2.2975**.
 4. Click "ok".
 5. Then you will get :-
 
-   <place the ac anlysis here>
+![Alt Text](image/ac_iss.png)
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -163,7 +163,7 @@ Therefore, **Gain,Av = -1.64361**.
 1. Right click on the Vicm1 and on the Small signal AC Analysis set Amplitude = 1. (Amplitude = 1 is a standard practice because Gain, Av = -Vout/Vin and  Vin (AC Amplitude) = 1V, then
    Gain=Vout
 2. Click on the run icon and select the AC Analysis mode.
-3. Set Type of sweep = Decade, Number of points per decade = 20 and Start frequency = 1Hz and Stop frequency = 1THz.
+3. Set Type of sweep = Decade, Number of points per decade = 20 and Start frequency = 1Hz and Stop frequency = 2THz.
 4. Click "ok".
 5. Then you will get :-
 
