@@ -155,7 +155,7 @@ Here we can see Id = 0.4375mA , Vds = 1.70025-0.599027 = 1.1V (Vds = Vd-Vs), Vp 
 
    <place the transient here>
 
-Here we can see that the amplitude of the output waveform is 1.7812989-1.6991184 = 0.0821805V. The input amplitude is 50mV so Gain, Av = -Vout/Vin = -0.0821805V/50mV = -2.2975.
+Here we can see that the amplitude of the output waveform is 1.7812989-1.6991184 = 0.0821805V. The input amplitude is 50mV so Gain, Av = -Vout/Vin = -0.0821805V/50mV = -1.64361.
 Therefore, **Gain,Av = -1.64361**.
 
 ## C. AC Analysis.
@@ -218,7 +218,7 @@ Here we can see Id = 0.437425mA , Vds = 1.70051-0.5991 = 1.1V (Vds = Vd-Vs), Id(
    <place the transient here>
 
 Here we can see that the amplitude of the output waveform is 1.7901093-1.6971968 = 0.0929125V. The input amplitude is 50mV so Gain, Av = -Vout/Vin = -0.0929125V/50mV = -1.85825.
-Therefore, **Gain,Av = -1.64361**.
+Therefore, **Gain,Av = -1.85825**.
 
 ## C. AC Analysis.
 **Procedure for AC analysis in LTSpice**
