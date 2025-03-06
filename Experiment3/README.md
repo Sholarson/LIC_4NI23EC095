@@ -68,7 +68,7 @@ Vgs = Vicm - Vp = 1V
 7. Now set the width and length of the MOSFET and remove **".step param W 1um 50um 1.5um"** and **".param L 180nm"**.
 8. Then click on the run icon, you will get :-
 
-   <place the dc op here>
+![Alt Text](image/dc_operating_point_with_Rss.png)
 
 
 Here we can see Id = 0.437353mA , Vds = 1.7-0.59 = 1.1V (Vds = Vd-Vs), Vp = 0.599172V and Vocm = 1.70076V ,which is approx. eqaul to the analysis we have done.
@@ -138,7 +138,7 @@ Vgs = Vicm - Vp = 1V
 3. Now right click on the MOSFET, set the value of the channel length and width of the MOSFET same as previous circuit i,e L=180nm and W=2.525µ.
 4. Then click on the run icon, you will get :-
 
-   <place the dc op here>
+![Alt Text](image/dc_operating_point_with_current_source.png)
 
 
 Here we can see Id = 0.4375mA , Vds = 1.70025-0.599027 = 1.1V (Vds = Vd-Vs), Vp = 0.599172V and Vocm = 1.70025V ,which is eqaul to the analysis we have done.
@@ -200,7 +200,7 @@ But we have to set the voltage Vg of M3 for drain current 0.875mA to flow. For t
 8. Set the Vg = 0.875mA for the M3 MOSFET.
 9. Then click on the run icon, you will get :-
 
-   <place the dc op here>
+![Alt Text](image/dc_opt_pnt_with_nmos.png)
 
 
 Here we can see Id = 0.437425mA , Vds = 1.70051-0.5991 = 1.1V (Vds = Vd-Vs), Id(M3)=0.874851V Vp = 0.5991V and Vocm = 1.70051V ,which is equal to the analysis we have done.
