@@ -20,6 +20,8 @@ The analysis includes:
 
 ## First Circuit
 
+![Alt Text](image/circuit_with_Rss.png)
+
 ## A. DC Analysis
 Let Iss be the current flowing throught Rss and Id1 & Id2 be the current flwowing throught NMOS 1 and 2.
 
