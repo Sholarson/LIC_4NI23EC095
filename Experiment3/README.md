@@ -243,12 +243,13 @@ So, **20log(Av) = 20log(1.85825)=5.3820828dB**. This value is close to the maxim
 ## Results
 **A. First Circuit (with Rss)**
 1. DC Operating Point:
--  Iss = 0.875mA
--  Id1 = Id2 = 0.4375mA
+-  Iss = 0.874704mA
+-  Id1 = Id2 = 0.437353mA
 -  Rd1 = Rd2 = 3428Ω
 -  Rss = 685Ω
 -  Vds = 1.1V
 -  Vgs = 1V
+-  Vocm1 = Vocm2 = 1.70076V
 
 2. Transient Analysis:
 -  Input amplitude = 50mV
@@ -257,8 +258,8 @@ So, **20log(Av) = 20log(1.85825)=5.3820828dB**. This value is close to the maxim
 
 3. AC Analysis:
 -  Midband gain = 7.4618 dB
--  3dB gain = 4.4618 dB
--  Theoretical gain = 7.2251 dB
+-  Gain after subtracting 3dB = 4.4618 dB
+-  Theoretical midband gain = 7.2251 dB
 
 **B. Second Circuit (with Iss)**
 
@@ -268,24 +269,45 @@ So, **20log(Av) = 20log(1.85825)=5.3820828dB**. This value is close to the maxim
 -  Rd1 = Rd2 = 3428Ω
 -  Vds = 1.1V
 -  Vgs = 1V
+-  Vocm = 1.70025V
 
 2. Transient Analysis:
--  Input amplitude = 50mV
--  Output amplitude = 0.110V
--  Gain (Av) = -2.2
+-  Input amplitude = 50 mV
+-  Output amplitude = 0.0821805 V
+-  Gain (Av) = -1.64361
 
 3. AC Analysis:
--  Midband gain = 7.2 dB
--  3dB gain = 4.2 dB
--  Theoretical gain = 7 dB
+-  Midband gain = 4.424068 dB
+-  Gain after subtracting 3dB = 1.424068 dB
+-  Theoretical midband gain = 4.315975 dB
+
+**B. Third Circuit (with NMOS)**
+
+1. DC Operating Point:
+-  Id(M3) = 0.874851mA
+-  Id1 = Id2 = 0.437425mA
+-  Rd1 = Rd2 = 3428Ω
+-  Vds = 1.1V
+-  Vgs = 1V
+-  Vocm = 1.70051V
+
+2. Transient Analysis:
+-  Input amplitude = 50 mV
+-  Output amplitude = 0.0929125V V
+-  Gain (Av) = -1.85825
+
+3. AC Analysis:
+-  Midband gain = 5.1869502dB
+-  Gain after subtracting 3dB = 2.1869502dB
+-  Theoretical midband gain = 5.3820828dB
 
 ## Inference:
 
-**1. Comparison of Gain (Rss vs. Iss):**
+**1. Comparison of Gain:**
 
 The gain in the second circuit (with Iss) is slightly lower than the first circuit (with Rss), even though it should ideally increase when using a current source instead of a resistor.
 
-**2. Why Gain Should Increase Using Iss:**
+**2. Why Gain Should Increase Using Iss & NMOS:**
 
 When using a resistor (Rss), the tail current varies due to the differential input signal, causing imbalance and reducing the differential mode gain.
 
@@ -293,10 +315,8 @@ A current source (Iss) ideally provides a high output impedance, improving the c
 
 **3. Why Gain Reduces Instead:**
 
-Parasitic Capacitances: At higher frequencies, the presence of parasitic capacitances in MOSFETs influences the gain, causing slight deviations from the expected theoretical gain.
+The presence of parasitic capacitances in MOSFETs influences the gain, causing slight deviations from the expected theoretical gain.
 
 ## Conclusion:
 
-While a current source is expected to provide better gain performance, practical limitations such as mismatch, channel-length modulation, and parasitic effects contribute to a slightly lower gain than expected.
-
-Further optimization, such as increasing the channel length of the current source MOSFET or using cascoded current sources, could improve the gain.
+Hence, in both transient and AC analysis, the circuit with Rss showed the highest gain, even though the circuit with the MOSFET current source (Iss) was expected to have a higher gain. This deviation is mainly due to parasitic capacitance.
