@@ -103,6 +103,9 @@ Therefore, **Gain,Av = -2.2975**.
 
 
 ## Second Circuit
+
+![Alt Text](image/circuit_with_Iss.png)
+
 ## A. DC Analysis
 Here current source Iss = 0.875mA is applied as Rss was setting Iss = 0.875mA using voltage division. 
 Since a current source directly forces a specific current, it must match this value to maintain the same operating point.
@@ -170,6 +173,9 @@ Therefore, **Gain,Av = -1.64361**.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Third Circuit
+
+![Alt Text](image/circuit_with_nmos.png)
+
 ## A. DC Analysis
 In this circuit, an NMOS transistor (M3) is used in place of the current source (Iss) and resistor (Rss). However, to maintain the same operating point, 
 the drain current of M3 must still be equal to Iss = 0.875mA.
