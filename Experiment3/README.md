@@ -97,10 +97,10 @@ Therefore, **Gain,Av = -2.2975**.
 4. Click "ok".
 5. Then you will get :-
 
-![Alt Text](image/ac_iss.png)
+![Alt Text](image/ac_rss.png)
 
-From here we can see that the midband gain is 7.4618081dB and on subtracting 3dB we can see the gain as 4.4618dB.
-So 
+From here we can see that the max midband gain is 7.4618081dB and on subtracting 3dB we can see the gain as 4.4618dB.
+So, **20log(Av) = 20log(2.2975)=7.2251dB**. This value is close to the maximum midband gain, confirming the consistency of the calculation.
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -172,6 +172,9 @@ Therefore, **Gain,Av = -1.64361**.
 
 ![Alt Text](image/ac_iss.png)
 
+From the analysis, we observe that the maximum midband gain is 4.424068 dB, and after subtracting 3 dB, the expected gain should be 1.4618 dB. However, the gain instead flattens at 1.9536 dB. This deviation is due to the intrinsic parasitic capacitances of the MOSFETs and their interaction with the resistances in the circuit. These parasitic capacitances introduce extra poles in the frequency response causing such effect.
+So, **20log(Av) = 20log(1.64361)=4.315975dB**. This value is close to the maximum midband gain, confirming the consistency of the calculation.
+
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -233,3 +236,67 @@ Therefore, **Gain,Av = -1.85825**.
 5. Then you will get :-
 
 ![Alt Text](image/ac_analysis_nmos.png)
+
+From the analysis, we observe that the maximum midband gain is 5.1869502dB, and after subtracting 3 dB, the expected gain should be 2.1869502dB. However, the gain instead flattens at 2.335dB.Similarly this deviation is due to the intrinsic parasitic capacitances of the MOSFETs and their interaction with the resistances in the circuit. These parasitic capacitances introduce extra poles in the frequency response causing such effect.
+So, **20log(Av) = 20log(1.85825)=5.3820828dB**. This value is close to the maximum midband gain, confirming the consistency of the calculation.
+
+## Results
+**A. First Circuit (with Rss)**
+1. DC Operating Point:
+-  Iss = 0.875mA
+-  Id1 = Id2 = 0.4375mA
+-  Rd1 = Rd2 = 3428Ω
+-  Rss = 685Ω
+-  Vds = 1.1V
+-  Vgs = 1V
+
+2. Transient Analysis:
+-  Input amplitude = 50mV
+-  Output amplitude = 0.114875V
+-  Gain (Av) = -2.2975
+
+3. AC Analysis:
+-  Midband gain = 7.4618 dB
+-  3dB gain = 4.4618 dB
+-  Theoretical gain = 7.2251 dB
+
+**B. Second Circuit (with Iss)**
+
+1. DC Operating Point:
+-  Iss = 0.875mA
+-  Id1 = Id2 = 0.4375mA
+-  Rd1 = Rd2 = 3428Ω
+-  Vds = 1.1V
+-  Vgs = 1V
+
+2. Transient Analysis:
+-  Input amplitude = 50mV
+-  Output amplitude = 0.110V
+-  Gain (Av) = -2.2
+
+3. AC Analysis:
+-  Midband gain = 7.2 dB
+-  3dB gain = 4.2 dB
+-  Theoretical gain = 7 dB
+
+## Inference:
+
+**1. Comparison of Gain (Rss vs. Iss):**
+
+The gain in the second circuit (with Iss) is slightly lower than the first circuit (with Rss), even though it should ideally increase when using a current source instead of a resistor.
+
+**2. Why Gain Should Increase Using Iss:**
+
+When using a resistor (Rss), the tail current varies due to the differential input signal, causing imbalance and reducing the differential mode gain.
+
+A current source (Iss) ideally provides a high output impedance, improving the common-mode rejection ratio (CMRR) and allowing for a more stable and higher gain.
+
+**3. Why Gain Reduces Instead:**
+
+Parasitic Capacitances: At higher frequencies, the presence of parasitic capacitances in MOSFETs influences the gain, causing slight deviations from the expected theoretical gain.
+
+## Conclusion:
+
+While a current source is expected to provide better gain performance, practical limitations such as mismatch, channel-length modulation, and parasitic effects contribute to a slightly lower gain than expected.
+
+Further optimization, such as increasing the channel length of the current source MOSFET or using cascoded current sources, could improve the gain.
