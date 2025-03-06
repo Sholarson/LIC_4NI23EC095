@@ -99,6 +99,9 @@ Therefore, **Gain,Av = -2.2975**.
 
 ![Alt Text](image/ac_iss.png)
 
+From here we can see that the midband gain is 7.4618081dB and on subtracting 3dB we can see the gain as 4.4618dB.
+So 
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
