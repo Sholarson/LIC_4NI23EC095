@@ -225,7 +225,7 @@ Therefore, **Gain,Av = -1.85825**.
 1. Right click on the Vicm1 and on the Small signal AC Analysis set Amplitude = 1. (Amplitude = 1 is a standard practice because Gain, Av = -Vout/Vin and  Vin (AC Amplitude) = 1V, then
    Gain=Vout
 2. Click on the run icon and select the AC Analysis mode.
-3. Set Type of sweep = Decade, Number of points per decade = 20 and Start frequency = 1Hz and Stop frequency = 1THz.
+3. Set Type of sweep = Decade, Number of points per decade = 20 and Start frequency = 1Hz and Stop frequency = 2THz.
 4. Click "ok".
 5. Then you will get :-
 
