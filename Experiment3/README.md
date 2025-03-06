@@ -1,4 +1,4 @@
-# 📡 MOS Differential Amplifier Experiment
+![image](https://github.com/user-attachments/assets/87d8ad09-8aee-4d14-b689-f79d884b30ac)# 📡 MOS Differential Amplifier Experiment
 ## 🎯 Aim
 Design and analyze MOS differential amplifier circuit for the following specifications:
 - Vdd = 3.2V
@@ -22,7 +22,7 @@ The analysis includes:
 
 ![Alt Text](image/circuit_with_Rss.png)
 
-## A. DC Analysis
+## 🔍 A. DC Analysis
 Let Iss be the current flowing throught Rss and Id1 & Id2 be the current flwowing throught NMOS 1 and 2.
 
 **Finding Rd1, Rd2 and Rss**
@@ -55,7 +55,7 @@ Vgs = Vicm - Vp = 1V
 
 **With Q-point (0.4375mA, 1.1V)**
 
-## Procedure for simulation in LTSpice
+## 🔬 Procedure for simulation in LTSpice
 1. Set up the circuit and give the value for the resistors based on the above analysis.
 2. Go to the Spice directive for including the **tsmc018.lib** and write **".lib tsmc018.lib"**. **(Note that this library file should be on the same directory as your ltspice file)**
 3. Now right click on the MOSFET and set the value of the channel length and width of the MOSFET as **L** and **W** respectively.
@@ -73,8 +73,8 @@ Vgs = Vicm - Vp = 1V
 
 Here we can see Id = 0.437353mA , Vds = 1.7-0.59 = 1.1V (Vds = Vd-Vs), Vp = 0.599172V and Vocm = 1.70076V ,which is approx. eqaul to the analysis we have done.
 
-## B. Transient Analysis.
-**Procedure for Transient analysis in LTSpice**
+## 🔍 B. Transient Analysis.
+**🔬 Procedure for Transient analysis in LTSpice**
 1. Remove the **".op"**.
 2. Right click on the Vicm1 and select **"Advanced"**.
 3. Then on the function select **"SINE"**.
@@ -88,8 +88,8 @@ Here we can see Id = 0.437353mA , Vds = 1.7-0.59 = 1.1V (Vds = Vd-Vs), Vp = 0.59
 Here we can see that the amplitude of the output waveform is 1.818528-1.7036 = 0.114875V. The input amplitude is 50mV so Gain, Av = -Vout/Vin = -0.114875V/50mV = -2.2975.
 Therefore, **Gain,Av = -2.2975**.
 
-## C. AC Analysis.
-**Procedure for AC analysis in LTSpice**
+## 🔍 C. AC Analysis.
+**🔬 Procedure for AC analysis in LTSpice**
 1. Right click on the Vicm1 and on the Small signal AC Analysis set Amplitude = 1. (Amplitude = 1 is a standard practice because Gain, Av = -Vout/Vin and  Vin (AC Amplitude) = 1V, then
    Gain=Vout
 2. Click on the run icon and select the AC Analysis mode.
@@ -109,7 +109,7 @@ So, **20log(Av) = 20log(2.2975)=7.2251dB**. This value is close to the maximum m
 
 ![Alt Text](image/circuit_with_Iss.png)
 
-## A. DC Analysis
+## 🔍 A. DC Analysis
 Here current source Iss = 0.875mA is applied as Rss was setting Iss = 0.875mA using voltage division. 
 Since a current source directly forces a specific current, it must match this value to maintain the same operating point.
 
@@ -135,7 +135,7 @@ Vgs = Vicm - Vp = 1V
 
 **With Q-point (0.4375mA, 1.1V)**
 
-## Procedure for simulation in LTSpice
+## 🔬 Procedure for simulation in LTSpice
 1. Set up the circuit and give the value for the resistors based on the above analysis.
 2. Go to the Spice directive for including the **tsmc018.lib** and write **".lib tsmc018.lib"**. **(Note that this library file should be on the same directory as your ltspice file)**
 3. Now right click on the MOSFET, set the value of the channel length and width of the MOSFET same as previous circuit i,e L=180nm and W=2.525µ.
@@ -146,8 +146,8 @@ Vgs = Vicm - Vp = 1V
 
 Here we can see Id = 0.4375mA , Vds = 1.70025-0.599027 = 1.1V (Vds = Vd-Vs), Vp = 0.599172V and Vocm = 1.70025V ,which is eqaul to the analysis we have done.
 
-## B. Transient Analysis.
-**Procedure for Transient analysis in LTSpice**
+## 🔍 B. Transient Analysis.
+**🔬 Procedure for Transient analysis in LTSpice**
 1. Remove the **".op"**.
 2. Right click on the Vicm1 and select **"Advanced"**.
 3. Then on the function select **"SINE"**.
@@ -161,7 +161,7 @@ Here we can see Id = 0.4375mA , Vds = 1.70025-0.599027 = 1.1V (Vds = Vd-Vs), Vp 
 Here we can see that the amplitude of the output waveform is 1.7812989-1.6991184 = 0.0821805V. The input amplitude is 50mV so Gain, Av = -Vout/Vin = -0.0821805V/50mV = -1.64361.
 Therefore, **Gain,Av = -1.64361**.
 
-## C. AC Analysis.
+## 🔍 C. AC Analysis.
 **Procedure for AC analysis in LTSpice**
 1. Right click on the Vicm1 and on the Small signal AC Analysis set Amplitude = 1. (Amplitude = 1 is a standard practice because Gain, Av = -Vout/Vin and  Vin (AC Amplitude) = 1V, then
    Gain=Vout
@@ -182,7 +182,7 @@ So, **20log(Av) = 20log(1.64361)=4.315975dB**. This value is close to the maximu
 
 ![Alt Text](image/circuit_with_nmos.png)
 
-## A. DC Analysis
+## 🔍 A. DC Analysis
 In this circuit, an NMOS transistor (M3) is used in place of the current source (Iss) and resistor (Rss). However, to maintain the same operating point, 
 the drain current of M3 must still be equal to Iss = 0.875mA.
 
@@ -211,8 +211,8 @@ But we have to set the voltage Vg of M3 for drain current 0.875mA to flow. For t
 
 Here we can see Id = 0.437425mA , Vds = 1.70051-0.5991 = 1.1V (Vds = Vd-Vs), Id(M3)=0.874851V Vp = 0.5991V and Vocm = 1.70051V ,which is equal to the analysis we have done.
 
-## B. Transient Analysis.
-**Procedure for Transient analysis in LTSpice**
+## 🔍 B. Transient Analysis.
+**🔬 Procedure for Transient analysis in LTSpice**
 1. Remove the **".op"**.
 2. Right click on the Vicm1 and select **"Advanced"**.
 3. Then on the function select **"SINE"**.
@@ -226,8 +226,8 @@ Here we can see Id = 0.437425mA , Vds = 1.70051-0.5991 = 1.1V (Vds = Vd-Vs), Id(
 Here we can see that the amplitude of the output waveform is 1.7901093-1.6971968 = 0.0929125V. The input amplitude is 50mV so Gain, Av = -Vout/Vin = -0.0929125V/50mV = -1.85825.
 Therefore, **Gain,Av = -1.85825**.
 
-## C. AC Analysis.
-**Procedure for AC analysis in LTSpice**
+## 🔍 C. AC Analysis.
+**🔬 Procedure for AC analysis in LTSpice**
 1. Right click on the Vicm1 and on the Small signal AC Analysis set Amplitude = 1. (Amplitude = 1 is a standard practice because Gain, Av = -Vout/Vin and  Vin (AC Amplitude) = 1V, then
    Gain=Vout
 2. Click on the run icon and select the AC Analysis mode.
@@ -240,8 +240,8 @@ Therefore, **Gain,Av = -1.85825**.
 From the analysis, we observe that the maximum midband gain is 5.1869502dB, and after subtracting 3 dB, the expected gain should be 2.1869502dB. However, the gain instead flattens at 2.335dB.Similarly this deviation is due to the intrinsic parasitic capacitances of the MOSFETs and their interaction with the resistances in the circuit. These parasitic capacitances introduce extra poles in the frequency response causing such effect.
 So, **20log(Av) = 20log(1.85825)=5.3820828dB**. This value is close to the maximum midband gain, confirming the consistency of the calculation.
 
-## Results
-**A. First Circuit (with Rss)**
+## 📊 Results
+**🚀 A. First Circuit (with Rss)**
 1. DC Operating Point:
 -  Iss = 0.874704mA
 -  Id1 = Id2 = 0.437353mA
@@ -261,7 +261,7 @@ So, **20log(Av) = 20log(1.85825)=5.3820828dB**. This value is close to the maxim
 -  Gain after subtracting 3dB = 4.4618 dB
 -  Theoretical midband gain = 7.2251 dB
 
-**B. Second Circuit (with Iss)**
+**🚀 B. Second Circuit (with Iss)**
 
 1. DC Operating Point:
 -  Iss = 0.875mA
@@ -281,7 +281,7 @@ So, **20log(Av) = 20log(1.85825)=5.3820828dB**. This value is close to the maxim
 -  Gain after subtracting 3dB = 1.424068 dB
 -  Theoretical midband gain = 4.315975 dB
 
-**B. Third Circuit (with NMOS)**
+**🚀 C. Third Circuit (with NMOS)**
 
 1. DC Operating Point:
 -  Id(M3) = 0.874851mA
@@ -301,7 +301,7 @@ So, **20log(Av) = 20log(1.85825)=5.3820828dB**. This value is close to the maxim
 -  Gain after subtracting 3dB = 2.1869502dB
 -  Theoretical midband gain = 5.3820828dB
 
-## Inference:
+## 📉Inference:
 
 **1. Comparison of Gain:**
 
@@ -317,6 +317,6 @@ A current source (Iss) ideally provides a high output impedance, improving the c
 
 The presence of parasitic capacitances in MOSFETs influences the gain, causing slight deviations from the expected theoretical gain.
 
-## Conclusion:
+## ⚡ Conclusion:
 
 Hence, in both transient and AC analysis, the circuit with Rss showed the highest gain, even though the circuit with the MOSFET current source (Iss) was expected to have a higher gain. This deviation is mainly due to parasitic capacitance.
