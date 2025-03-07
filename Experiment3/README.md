@@ -71,7 +71,10 @@ Vgs = Vicm - Vp = 1V
 ![Alt Text](image/dc_operating_point_with_Rss.png)
 
 
-Here we can see Id = 0.437353mA , Vds = 1.7-0.59 = 1.1V (Vds = Vd-Vs), Vp = 0.599172V and Vocm = 1.70076V ,which is approx. eqaul to the analysis we have done.
+![Alt Text](image/op_pnt_rss.jpeg)
+
+
+Here we can see Id = 0.437353mA , Vds = 1.7-0.59 = 1.1V (Vds = Vd-Vs), Vth = 0.489V, Vp = 0.599172V and Vocm = 1.70076V ,which is approx. eqaul to the analysis we have done.
 
 ## 🔍 B. Transient Analysis.
 **🔬 Procedure for Transient analysis in LTSpice**
@@ -143,8 +146,10 @@ Vgs = Vicm - Vp = 1V
 
 ![Alt Text](image/dc_operating_point_with_current_source.png)
 
+![Alt Text](image/op_pnt_iss.jpeg)
 
-Here we can see Id = 0.4375mA , Vds = 1.70025-0.599027 = 1.1V (Vds = Vd-Vs), Vp = 0.599172V and Vocm = 1.70025V ,which is eqaul to the analysis we have done.
+
+Here we can see Id = 0.4375mA , Vds = 1.70025-0.599027 = 1.1V (Vds = Vd-Vs), Vth = 0.489V, Vp = 0.599172V and Vocm = 1.70025V ,which is eqaul to the analysis we have done.
 
 ## 🔍 B. Transient Analysis.
 **🔬 Procedure for Transient analysis in LTSpice**
@@ -208,8 +213,9 @@ But we have to set the voltage Vg of M3 for drain current 0.875mA to flow. For t
 
 ![Alt Text](image/dc_opt_pnt_with_nmos.png)
 
+![Alt Text](image/op_pnt_nmos.jpeg)
 
-Here we can see Id = 0.437425mA , Vds = 1.70051-0.5991 = 1.1V (Vds = Vd-Vs), Id(M3)=0.874851V Vp = 0.5991V and Vocm = 1.70051V ,which is equal to the analysis we have done.
+Here we can see Id = 0.437425mA , Vds = 1.70051-0.5991 = 1.1V (Vds = Vd-Vs), Id(M3)=0.874851V, Vth (M1, M2) = 0.489V, Vth (M3) = 0.492V, Vp = 0.5991V and Vocm = 1.70051V ,which is equal to the analysis we have done.
 
 ## 🔍 B. Transient Analysis.
 **🔬 Procedure for Transient analysis in LTSpice**
