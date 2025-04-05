@@ -48,9 +48,15 @@ The relation between the ID1 and IREF can be given by the same expression.
 
 ## 🔍 DC Analysis
 
+![Alt Text](image/dc.png)
+
 ## 🔍 Transient Analysis.
 
+![Alt Text](image/transient.png)
+
 ## 🔍 AC Analysis.
+
+![Alt Text](image/ac.png)
 
 ## 📊 Results
 
