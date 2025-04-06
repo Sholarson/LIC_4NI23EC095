@@ -47,6 +47,23 @@ The relation between the ID1 and IREF can be given by the same expression.
 
 ![Alt Text](image/circuit.png)
 
+## Design part
+Total Current = I = 10^(-3)/1.8 A = 0.555 mA
+
+a) Current ratio = 1:1
+
+  I = Iref + Ix
+
+  Iref = Ix = 0.277 mA
+
+b) Current ratio = 1:2
+
+  I = Iref + Ix
+
+  2 * Iref = Ix = 0.3703 mA, Iref = 0.1851 mA
+    
+## CASE 1: When Length = 1um
+
 ## 🔍 DC Analysis
 
 ![Alt Text](image/dc.png)
@@ -59,8 +76,42 @@ The relation between the ID1 and IREF can be given by the same expression.
 
 ![Alt Text](image/ac.png)
 
+## CASE 2: When Length = 180um
+
+## 🔍 DC Analysis
+
+![Alt Text](image/.png)
+
+## 🔍 Transient Analysis.
+
+![Alt Text](image/.png)
+
+## 🔍 AC Analysis.
+
+![Alt Text](image/.png)
+
+## CASE 3: When Length = 500um
+
+## 🔍 DC Analysis
+
+![Alt Text](image/.png)
+
+## 🔍 Transient Analysis.
+
+![Alt Text](image/.png)
+
+## 🔍 AC Analysis.
+
+![Alt Text](image/.png)
+
+
 ## 📊 Results
 
+1. When length = 1um
+
+   a. width = 6.4719825um
+
+2. 
 1. DC Operating Point:
 
 2. Transient Analysis:
