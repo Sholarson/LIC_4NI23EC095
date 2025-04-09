@@ -1,17 +1,20 @@
 # 📡 CURRENT MIRROR
 ## 🎯 Aim
-Design and analyze current mirror circuit as active load in amplifier circuit
 
-The analysis includes:
+Design and analyze a current mirror circuit used as an active load in an amplifier configuration.
 
+1. **Design Specifications:**
+   - Voltage Gain \( A_v > -10 \, \text{V/V} \)
+   - Supply Voltage \( V_{DD} = 1.8 \, \text{V} \)
+   - Power Consumption \( P \leq 1 \, \text{mW} \)
 
-✅ DC Analysis
+2. **Tasks:**
+   - Design a differential amplifier incorporating a current mirror load as per **Experiment 3**.
+   - Perform the following analyses:
+     - **DC Analysis**
+     - **Transient Analysis**
+     - **AC Analysis**
 
-
-✅ Transient Analysis
-
-
-✅ AC Analysis
 
 ## Theory
 **What is Current Mirror?**
@@ -302,21 +305,97 @@ Let us perform the frequency response to verify this.
 
 -------------------------------------------------------------------------------------------------------------
 
+# Differential Amplifier Design and Analysis
 
-## 📊 Results
+## Part 2: Differential Amplifier
 
-1. When length = 1um
+After understanding the basics of the current mirror, we now move on to designing a **differential amplifier** using the same parameters employed in the differential amplifier simulation.
 
-   a. width = 6.4719825um
+![Differential Amplifier Schematic](image/image27.png)
 
-2. 
-1. DC Operating Point:
+### N-Channel MOSFETs (CMOSN)
 
-2. Transient Analysis:
+| Transistor | Width (W) | Length (L) |
+|------------|-----------|------------|
+| M1         | 108.5 µm  | 180 nm     |
+| M2         | 108.5 µm  | 180 nm     |
+| M3         | 22.42 µm  | 180 nm     |
+| M6         | 10 µm     | 180 nm     |
 
-3. AC Analysis:
+> **Note**: The (W/L) ratio of **M3** is more than double that of **M6** to ensure that the current flowing through M3 is double that of M6:
+> - \( I_{M3} = 1.222 \, \text{mA} \)
+> - \( I_{M6} = 0.611 \, \text{mA} \)
 
-## 📉Inference:
+This rationale is also applied to **M4** and **M5**, which have equal (W/L) ratios to ensure equal current distribution.
 
+### P-Channel MOSFETs (CMOSP)
 
-## ⚡ Conclusion:
+| Transistor | Width (W) | Length (L) |
+|------------|-----------|------------|
+| M4         | 52 µm     | 180 nm     |
+| M5         | 52 µm     | 180 nm     |
+| M6         | 10 µm     | 180 nm     |
+
+---
+
+## DC Analysis
+
+![DC Analysis](image/image28.png)
+
+As shown in the above DC analysis, the simulation values obtained closely match the required values for the chosen (W/L) ratios.
+
+---
+
+## Transient Analysis
+
+![Transient Analysis](image/image29.png)
+
+A differential input of **10 mV peak**, **1 kHz sine wave** was applied to the gate of **M1**. Since the output of a differential amplifier is the **difference in drain voltages** of M1 and M2, only one side of the differential input was excited.
+
+> **Important Insight**: If a **common-mode input** is applied, the differential amplifier ideally rejects the signal, resulting in negligible gain.
+
+### Voltage Gain Calculation
+
+\[
+A_v = \frac{V_{out1} - V_{out2}}{V_{in}} = \frac{1.092 \, \text{V} - 0.95 \, \text{V}}{-10 \, \text{mV}} = -14.2 \, \text{V/V} \approx 23.045 \, \text{dB}
+\]
+
+---
+
+## Results and Inferences
+
+### 1. Gain-Bandwidth Trade-off
+
+There is a clear inverse relationship between **gain** and **bandwidth**:
+
+- **180 nm**: Modest gain (~29 dB), High bandwidth (>600 MHz)
+- **1 μm**: High gain (~35–39 dB), Reduced bandwidth (<100 MHz)
+
+### 2. Channel Length Effects
+
+Increasing channel length from **180 nm → 500 nm → 1 μm** leads to:
+
+- **Increased Gain**: Due to reduced channel length modulation (λ), resulting in higher output resistance.
+- **Decreased Bandwidth**: Caused by increased parasitic capacitances in longer channel devices.
+- **Larger Transistor Widths Required**: NMOS widths increased (e.g., 31 µm → 121 µm) to maintain the same current levels.
+
+### 3. W/L Ratio Impact
+
+A **1:2 W/L ratio** consistently yields better gain performance than 1:1 across all channel lengths:
+
+| Channel Length | Gain (1:1 Ratio) | Gain (1:2 Ratio) |
+|----------------|------------------|------------------|
+| 180 nm         | 29.298 dB        | 29.325 dB        |
+| 500 nm         | 37.870 dB        | 38.015 dB        |
+| 1 µm           | 35.481 dB        | 38.693 dB        |
+
+---
+
+## Conclusion
+
+The differential amplifier experiment highlights:
+
+- The influence of **channel length** and **W/L ratios** on gain and bandwidth.
+- The ability to **customize circuit performance** based on design goals by strategically selecting transistor geometries.
+- The trade-offs between **gain**, **bandwidth**, and **silicon area**, which must be considered during analog circuit design.
+
