@@ -121,69 +121,186 @@ So, **required input voltage = 0.569 V**
 
 ## Circuit Diagram ##
 
-<img src="./media/image3.png"
+<img src="image/image3.png"
 style="width:6.26806in;height:3.95208in" />
 
-## Circuit
 
-![Alt Text](image/circuit.png)
+## 1. DC Analysis
 
-## Design part
-Total Current = I = 10^(-3)/1.8 A = 0.555 mA
+<img src="image/image4.png" width="600"/>
 
-a) Current ratio = 1:1
+The simulated currents through NMOS (M3) and PMOS (M1, M2) closely match our calculated values, confirming that the design adheres to power specifications.
 
-  I = Iref + Ix
+**Power Consumption:**  
+P = I<sub>total</sub> × V<sub>DD</sub> = 0.55401 mA × 1.8 V = **0.9972 mW**  
+This falls within our 1 mW power budget.
 
-  Iref = Ix = 0.277 mA
+---
 
-b) Current ratio = 1:2
+## 2. Transient Analysis
 
-  I = Iref + Ix
+ 
+<img src="image/image6.png" width="600"/>  
+<img src="image/image7.png" width="700"/>
 
-  2 * Iref = Ix = 0.3703 mA, Iref = 0.1851 mA
-    
-## CASE 1: When Length = 1um
+A sinusoidal input with a DC offset of 0.569 V is applied. The peak output voltage is **1.2381 V**, for an input peak of **10 mV**.
 
-## 🔍 DC Analysis
+**Voltage Gain:**  
+A<sub>V</sub> = (V<sub>out</sub> - V<sub>mid</sub>) / V<sub>in</sub>  
+= (1.2381 V – 0.96 V) / 10 mV = **-27.81 V/V = 28.88 dB**
 
-![Alt Text](image/dc.png)
+> Gain requirement (≥10 V/V) is successfully met.
 
-## 🔍 Transient Analysis.
+---
 
-![Alt Text](image/transient.png)
+## 3. AC Analysis
 
-## 🔍 AC Analysis.
+<img src="image/image8.png" width="700"/>
 
-![Alt Text](image/ac.png)
+**Bandwidth (3 dB point):**  
+**629.997 MHz**
 
-## CASE 2: When Length = 180um
+**Midband Gain:**  
+**29.298 dB** (very close to transient gain: **28.884 dB**)
 
-## 🔍 DC Analysis
+> The AC response confirms the expected bandwidth and validates the gain accuracy.
 
-![Alt Text](image/.png)
+---
 
-## 🔍 Transient Analysis.
+## Circuit 2: Ratio of 1:2 using L = 180 nm
 
-![Alt Text](image/.png)
+For ratio of 1:2,  
+I<sub>ref</sub> = I<sub>total</sub>/3 = **0.183 mA**
 
-## 🔍 AC Analysis.
+### Circuit Diagram  
+<img src="image/image9.png" alt="Circuit Diagram" width="600"/>
 
-![Alt Text](image/.png)
+### DC Analysis  
+<img src="image/image10.png" alt="DC Analysis" width="500"/>
 
-## CASE 3: When Length = 500um
+### Transient Analysis  
+<img src="image/image11.png" alt="Transient Analysis" width="550"/>
 
-## 🔍 DC Analysis
+**Gain (V/V)** = (1.26006 - 0.96) / (-10 mV) = **30.006 V/V = 29.544 dB**  
+*Input Voltage:* 10 mV peak  
+*Frequency:* 1 kHz  
+*Waveform:* Sine
 
-![Alt Text](image/.png)
+Let us perform the frequency response to verify this.
 
-## 🔍 Transient Analysis.
+### AC Analysis  
+<img src="image/image12.png" alt="AC Analysis" width="600"/>
 
-![Alt Text](image/.png)
+**Midband Gain:** ≈ **29.325 dB**  
+**Calculated Gain:** 29.544 dB → ≈ **29.25 V/V**
 
-## 🔍 AC Analysis.
+---
 
-![Alt Text](image/.png)
+## Analysis using L = 500 nm
+
+### 1) Ratio of 1:1 using L = 500 nm
+
+**CMOSN (M3):** W = 65.19 µm, L = 500 nm  
+**CMOSP (M1, M2):** W = 10 µm, L = 500 nm
+
+<img src="image/image13.png" alt="Circuit Diagram - L = 500nm, 1:1" width="500"/>
+
+#### DC Analysis  
+<img src="image/image14.png" alt="DC Analysis" width="500"/>
+
+#### Transient Analysis  
+<img src="image/image15.png" alt="Transient Analysis" width="600"/>
+
+#### AC Analysis  
+<img src="image/image16.png" alt="AC Analysis" width="600"/>
+
+**Gain:** 37.87023 dB  
+**3 dB Bandwidth:** 122.329 MHz
+
+---
+
+### 2) Ratio of 1:2 using L = 500 nm
+
+**CMOSN (M3):** W = 85.243 µm, L = 500 nm  
+**CMOSP (M1):** W = 10 µm, L = 500 nm  
+**CMOSP (M2):** W = 20 µm, L = 500 nm
+
+#### DC Analysis  
+<img src="image/image17.png" alt="DC Analysis" width="550"/>
+
+#### Transient Analysis  
+<img src="image/image18.png" alt="Transient Analysis" width="600"/>
+
+**Gain (V/V):** -62.063 V/V = **35.855 dB**
+
+#### AC Analysis  
+<img src="image/image19.png" alt="AC Analysis" width="600"/>
+
+**3 dB Bandwidth:** 93.0732 MHz  
+**Gain:** 38.015 dB
+
+---
+
+## Analysis using L = 1 µm
+
+### 1) Ratio of 1:1
+
+**CMOSN (M3):** W = 93.35 µm, L = 1 µm  
+**CMOSP (M1, M2):** W = 10 µm, L = 1 µm
+
+<img src="image/image20.png" alt="Circuit Diagram" width="550"/>
+
+#### DC Analysis  
+<img src="image/image17.png" alt="DC Analysis" width="500"/>
+
+#### Transient Analysis  
+<img src="image/image21.png" alt="Transient Analysis" width="580"/>
+
+**Gain (V/V):** -60 V/V = **35.563 dB**
+
+#### AC Analysis  
+<img src="image/image22.png" alt="AC Analysis" width="500"/>
+
+**3 dB Bandwidth:** 98.90171 MHz  
+**Gain:** 35.481 dB
+
+---
+
+### 2) Ratio of 1:2
+
+**CMOSN (M3):** W = 121.51 µm, L = 1 µm  
+**CMOSP (M1):** W = 20 µm, L = 1 µm  
+**CMOSP (M2):** W = 10 µm, L = 1 µm
+
+<img src="image/image23.png" alt="Circuit Diagram" width="600"/>
+
+#### DC Analysis  
+<img src="image/image24.png" alt="DC Analysis" width="500"/>
+
+#### Transient Analysis  
+<img src="image/image25.png" alt="Transient Analysis" width="600"/>
+
+#### AC Analysis  
+<img src="image/image26.png" alt="AC Analysis" width="600"/>
+
+**3 dB Bandwidth:** 57.2524 MHz  
+**Gain:** 38.69341 dB
+
+---
+
+## Table of Comparisons
+
+| **Parameter**            | **L = 180 nm (1:1)** | **L = 180 nm (1:2)** | **L = 500 nm (1:1)** | **L = 500 nm (1:2)** | **L = 1 µm (1:1)** | **L = 1 µm (1:2)** |
+|--------------------------|----------------------|----------------------|----------------------|----------------------|--------------------|--------------------|
+| **NMOS Width**           | 31.23 µm             | 41.127 µm            | 65.19 µm             | 85.243 µm            | 93.35 µm           | 121.51 µm          |
+| **PMOS Width (M1)**      | 10 µm                | 10 µm                | 10 µm                | 10 µm                | 10 µm              | 20 µm              |
+| **PMOS Width (M2)**      | 10 µm                | 20 µm                | 10 µm                | 20 µm                | 10 µm              | 10 µm              |
+| **Voltage Gain (V/V)**   | 27.81                | 30.006               | 61.00                | 62.063               | 60                 | 86.03              |
+| **Gain (dB)**            | 29.298               | 29.325               | 37.87                | 38.015               | 35.481             | 38.693             |
+| **3dB Bandwidth (MHz)**  | 629.997              | 438.012              | 122.329              | 93.073               | 98.902             | 57.252             |
+
+
+-------------------------------------------------------------------------------------------------------------
 
 
 ## 📊 Results
