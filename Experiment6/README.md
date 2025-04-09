@@ -43,6 +43,87 @@ The relation between the ID1 and IREF can be given by the same expression.
 ![Alt Text](image/rel_pmos.png)
 
 
+## Design
+
+To find total current:
+
+**I<sub>total</sub> = P / V<sub>DD</sub> = 1 mW / 1.8 V = 0.555 mA**
+
+---
+
+### Current Division:
+
+We know:
+
+**I<sub>total</sub> = I<sub>ref</sub> + I<sub>X</sub>**, where **I<sub>X</sub> = I<sub>D</sub>**
+
+- For (W/L) = 1:1 →  
+  **I<sub>ref</sub> + I<sub>X</sub> = I<sub>total</sub> / 2 = 0.277 mA**
+
+- For (W/L) = 1:2 →  
+  **I<sub>X</sub> = I<sub>total</sub> / 3**
+
+---
+
+### Voltage Gain & Output Resistance:
+
+We use the gain equation:
+
+**A<sub>V</sub> = -g<sub>m</sub> · R<sub>out</sub> = -g<sub>m</sub> · (r<sub>o1</sub> || r<sub>o2</sub>)**
+
+Where:
+
+- **r<sub>o1</sub> = 1 / (λ₁ · I<sub>D</sub>)**  
+- **r<sub>o2</sub> = 1 / (λ₂ · I<sub>D</sub>)**
+
+Given:
+
+- λ₁ = 1.382  
+- λ₂ = 1.329  
+- I<sub>D</sub> = 0.277 mA
+
+Then:
+
+**R<sub>out</sub> = 1 / (I<sub>D</sub> · (λ₁ + λ₂)) = 1331.65 Ω ≈ 1.331 kΩ**
+
+---
+
+### Transconductance:
+
+We use:
+
+**g<sub>m</sub> = 2I<sub>D</sub> / V<sub>OV</sub>**
+
+So:
+
+**A<sub>V</sub> = (2I<sub>D</sub> / V<sub>OV</sub>) · R<sub>out</sub>**
+
+Given gain ≥ 10 V/V, we calculate:
+
+**V<sub>OV</sub> = 0.0737 V**  
+**V<sub>GS</sub> = V<sub>OV</sub> + V<sub>t</sub> = 0.0737 + 0.496 = 0.569 V**
+
+So, **required input voltage = 0.569 V**
+
+---
+
+### MOSFET Dimensions
+
+| Transistor | Type | Width (W) | Length (L) |
+|------------|------|-----------|------------|
+| M1, M2     | PMOS | 10 µm     | 180 nm     |
+| M3         | NMOS | 31.23 µm  | 180 nm     |
+
+---
+
+> λ-values were taken from the TSMC 180 nm technology `.lib` file (`PCLM` parameter).  
+> These calculations ensure the amplifier operates with **A<sub>V</sub> ≥ 10 V/V** and **V<sub>GS</sub> = 0.569 V**.
+
+## Circuit Diagram ##
+
+<img src="./media/image3.png"
+style="width:6.26806in;height:3.95208in" />
+
 ## Circuit
 
 ![Alt Text](image/circuit.png)
